@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+
+    <style> body{font-family: comic sans ms, cursive;
+
+text-align: center;
+
+background-color: lightblue;
+
+padding-top: 50px;}
+
+.game{background-color: white;
+
+width: 400px;
+
+margin: auto;
+
+padding: 30px;
+
+border-radius: 20px;}
+h1 span{
+
+background: linear-gradient(90deg, #c80d07, #1a03a1);
+
+-webkit-background-clip: text;
+
+-webkit-text-fill-color: transparent;}
+input {
+
+padding: 10px;
+
+font-size: 18px;
+
+width: 100px;
+
+}button {
+
+padding: 10px 20px;
+
+font-size: 18px;
+
+background-color: orange;
+
+border: none;
+
+border-radius: 10px;
+
+cursor: pointer;
+
+}#result {
+
+font-size: 20px;
+
+font-weight: bold;
+
+}
+
+</style>
+</head>
+<body>
+    <div class="game">
+
+<h1>🎯<span>Guess the Number</span></h1>
+
+<p>I'm thinking of a number between 1 and 100.</p>
+
+<input id="guess" type="number">
+
+<button onclick="checkGuess()">Guess!</button>
+
+<p id="result">Make your first guess!</p>
+
+</div>
+  <script>let secretNumber = Math.floor(Math.random() * 100) + 1;
+    function checkGuess() {
+
+let guess = Number(document.getElementById("guess").value);
+
+if (guess == secretNumber) {
+
+document.getElementById("result").innerText =
+
+"🎉 Correct! You won!";
+
+}
+
+else if (guess < secretNumber) {
+
+document.getElementById("result").innerText =
+
+"⬆️ Too low! Try a bigger number.";
+
+}
+
+else {
+
+document.getElementById("result").innerText =
+
+"⬇️ Too high! Try a smaller number.";
+
+}
+
+}
+  </script>     
+  
+</body>
+</html>
